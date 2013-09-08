@@ -1,6 +1,7 @@
 package org.springframework.security.samples.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -10,14 +11,37 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+	@Order(1)
+	@Configuration
+	static class H2WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+		// @formatter:off
+		@Override
+		protected void configure(HttpSecurity http) throws Exception {
+			http
+				.csrf().disable()
+				.headers()
+					.cacheControl()
+					.contentTypeOptions()
+					.httpStrictTransportSecurity()
+					.and()
+				.requestMatchers()
+					.antMatchers("/h2/**")
+					.and()
+				.formLogin()
+					.loginPage("/login")
+					.and()
+				.authorizeRequests()
+					.anyRequest().hasRole("ADMIN");
+		}
+		// @formatter:on
+	}
+
 	// @formatter:off
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-			.csrf().disable()
-			.headers().disable()
 			.authorizeRequests()
-				.antMatchers("/h2/**").hasRole("ADMIN")
 				.antMatchers("/resources/**","/signup").permitAll()
 				.anyRequest().authenticated()
 				.and()
