@@ -15,9 +15,17 @@
  */
 package org.springframework.security.samples.mvc;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.samples.data.User;
 import org.springframework.security.samples.data.UserRepository;
 import org.springframework.stereotype.Controller;
@@ -57,6 +65,13 @@ public class SignupController {
         user = userRepository.save(user);
         redirect.addFlashAttribute("globalMessage", "Successfully signed up");
 
+        List<GrantedAuthority> authorities =
+            AuthorityUtils.createAuthorityList("ROLE_USER");
+        UserDetails userDetails = new org.springframework.security.core.userdetails
+            .User(user.getEmail(),user.getPassword(), authorities);
+        Authentication auth =
+            new UsernamePasswordAuthenticationToken(userDetails, user.getPassword(), authorities);
+        SecurityContextHolder.getContext().setAuthentication(auth);
         return "redirect:/";
     }
 }
