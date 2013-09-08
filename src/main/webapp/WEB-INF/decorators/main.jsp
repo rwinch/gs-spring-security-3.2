@@ -106,13 +106,17 @@
 	value="${pageContext.request.userPrincipal}"/>
 <c:choose>
 	<c:when test="${authentication != null}">
+		<c:set var="currentUser"
+	       value="${authentication.principal}"/>
+
 		<c:url var="logoutUrl" value="/logout"/>
 		<form:form class="navbar-form pull-right"
 			action="${logoutUrl}" method="post">
 			<input type="submit" value="Log out" />
 		</form:form>
 		<p class="navbar-text pull-right">
-			<c:out value="${authentication.name}"/>
+            <c:out value="${currentUser.lastName}"/>,
+            <c:out value="${currentUser.firstName}"/>
 		</p>
 	</c:when>
 	<c:otherwise>

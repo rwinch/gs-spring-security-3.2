@@ -22,6 +22,7 @@ import org.springframework.security.samples.data.Message;
 import org.springframework.security.samples.data.MessageRepository;
 import org.springframework.security.samples.data.User;
 import org.springframework.security.samples.data.UserRepository;
+import org.springframework.security.samples.security.CurrentUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -50,8 +51,8 @@ public class MessageController {
     }
 
     @RequestMapping(method=RequestMethod.GET)
-    public ModelAndView list() {
-        Iterable<Message> messages = messageRepository.findAll();
+    public ModelAndView list(@CurrentUser User currentUser) {
+        Iterable<Message> messages = messageRepository.findByToId(currentUser.getId());
         return new ModelAndView("messages/inbox", "messages", messages);
     }
 
