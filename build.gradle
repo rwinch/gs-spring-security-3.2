@@ -28,7 +28,9 @@ dependencies {
     providedCompile "javax.servlet:javax.servlet-api:3.0.1",
                     'javax.servlet.jsp:jsp-api:2.1'
 
-    compile "org.springframework:spring-webmvc:$springVersion",
+    compile "org.springframework.security:spring-security-config:$springSecurityVersion",
+            "org.springframework.security:spring-security-web:$springSecurityVersion",
+            "org.springframework:spring-webmvc:$springVersion",
             "org.springframework:spring-jdbc:$springVersion",
             "com.h2database:h2:1.3.168",
             "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final",

@@ -101,6 +101,27 @@
 			<a class="brand" href="${homeUrl}"><img src="${logoUrl}" alt="Spring Security Sample"/></a>
 			<div class="nav-collapse collapse">
 
+
+<c:set var="authentication"
+	value="${pageContext.request.userPrincipal}"/>
+<c:choose>
+	<c:when test="${authentication != null}">
+		<c:url var="logoutUrl" value="/logout"/>
+		<form:form class="navbar-form pull-right"
+			action="${logoutUrl}" method="post">
+			<input type="submit" value="Log out" />
+		</form:form>
+		<p class="navbar-text pull-right">
+			<c:out value="${authentication.name}"/>
+		</p>
+	</c:when>
+	<c:otherwise>
+		<p class="navbar-text pull-right">
+			<c:url value="/signup" var="signupUrl"/>
+			<a href="${signupUrl}">Sign Up</a>
+		</p>
+	</c:otherwise>
+</c:choose>
 			<ul class="nav">
 				<c:url var="inboxUrl" value="/"/>
 				<li><a href="${inboxUrl}">Inbox</a></li>
