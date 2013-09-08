@@ -66,9 +66,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		auth
 			.jdbcAuthentication()
 				.dataSource(dataSource)
-				.withDefaultSchema()
-				.withUser("user").password("password").roles("USER").and()
-				.withUser("admin").password("password").roles("USER","ADMIN");
+				.usersByUsernameQuery("select email, password, true from user where email = ?")
+				.authoritiesByUsernameQuery("select email, 'ROLE_USER' from user where email = ?");
 	}
 	// @formatter:on
 }
