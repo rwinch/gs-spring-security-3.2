@@ -5,8 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.access.PermissionEvaluator;
+import org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler;
+import org.springframework.security.access.expression.method.MethodSecurityExpressionHandler;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -15,11 +19,25 @@ import org.springframework.security.samples.security.UserRepositoryUserDetailsSe
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 @ComponentScan(basePackageClasses=UserRepositoryUserDetailsService.class)
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserDetailsService userDetailsService;
+
+	@Configuration
+	@EnableGlobalMethodSecurity(prePostEnabled = true)
+	static class MethodSecurityConfiguration extends GlobalMethodSecurityConfiguration {
+		@Autowired
+		private PermissionEvaluator permissionEvaluator;
+
+		@Override
+		protected MethodSecurityExpressionHandler expressionHandler() {
+			DefaultMethodSecurityExpressionHandler handler =
+					new DefaultMethodSecurityExpressionHandler();
+			handler.setPermissionEvaluator(permissionEvaluator);
+			return handler;
+		}
+	}
 
 	@Order(1)
 	@Configuration

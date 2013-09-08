@@ -28,6 +28,6 @@ public interface MessageRepository extends CrudRepository<Message, Long> {
 
 	Iterable<Message> findByToId(Long id);
 
-	@PostAuthorize("returnObject?.to?.id == principal?.id")
+	@PostAuthorize("hasPermission(returnObject, 'read')")
 	Message findOne(Long id);
 }
