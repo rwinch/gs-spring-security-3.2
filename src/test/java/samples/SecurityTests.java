@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.security.samples;
+package samples;
 
-import static org.springframework.security.samples.test.SecurityRequestPostProcessors.csrf;
-import static org.springframework.security.samples.test.SecurityRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static samples.test.SecurityRequestPostProcessors.csrf;
+import static samples.test.SecurityRequestPostProcessors.user;
 
 import java.util.List;
 
@@ -33,10 +33,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.samples.config.RootConfiguration;
-import org.springframework.security.samples.data.Message;
-import org.springframework.security.samples.data.User;
-import org.springframework.security.samples.mvc.config.WebMvcConfiguration;
+
+import sample.config.RootConfiguration;
+import sample.data.Message;
+import sample.data.User;
+import sample.mvc.config.WebMvcConfiguration;
+
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;

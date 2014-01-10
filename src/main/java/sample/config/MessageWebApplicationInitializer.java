@@ -24,8 +24,6 @@ import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import com.opensymphony.sitemesh.webapp.SiteMeshFilter;
-
 /**
  * Initializes our Message's application by making Spring aware of all the
  * configuration and exposing the {@link DispatcherServlet} as the default
@@ -60,6 +58,6 @@ public class MessageWebApplicationInitializer extends
 
     @Override
     protected Filter[] getServletFilters() {
-        return new Filter[] { new HiddenHttpMethodFilter(),new SiteMeshFilter() };
+        return new Filter[] { new HiddenHttpMethodFilter() };
     }
 }
