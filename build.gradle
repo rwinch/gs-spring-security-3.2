@@ -12,15 +12,23 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'tomcat'
 
 ext.slf4jVersion = '1.7.5'
-ext.springSecurityVersion = "3.2.0.CI-SNAPSHOT"
-ext.springVersion = "4.0.0.M3"
+ext.springSecurityVersion = "3.2.0.RELEASE"
+ext.springVersion = "3.2.6.RELEASE"
 
 group = 'org.springframework.security'
 
 war.baseName = 'sample'
 
 repositories {
-    maven { url "http://repo.springsource.org/libs-snapshot" }
+    mavenCentral()
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'org.springframework') {
+            details.useVersion springVersion
+        }
+    }
 }
 
 dependencies {
