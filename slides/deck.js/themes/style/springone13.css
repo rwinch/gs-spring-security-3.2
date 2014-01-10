@@ -1,0 +1,105 @@
+.deck-container {
+  font-family: Arial,sans-serif;
+  font-size: 1.75em;
+  background: #fff;
+}
+.deck-container .slide h2 {
+  border-bottom: 4px solid #6DB33F;
+}
+.deck-container .slide pre {
+  border-color: #ccc;
+  font-size: 90%;
+  padding: 8px;
+  margin: 0px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+.deck-container .slide code {
+  color: #888;
+}
+.deck-container .slide blockquote {
+  font-size: 0.90em;
+  font-style: italic;
+  padding: 1em 2em;
+  color: #000;
+  border-left: 5px solid #ccc;
+}
+.deck-container .slide blockquote p {
+  margin: 0;
+}
+.deck-container .slide blockquote cite {
+  font-size: .5em;
+  font-style: normal;
+  font-weight: bold;
+  color: #888;
+}
+.deck-container .deck-status {
+  position: absolute;
+  bottom: 4px;
+  left: 48px;
+  color: #888;
+  z-index: 4;
+  margin: 0;
+}
+
+.deck-container section {
+  background: #fff url('footer.png') no-repeat 95% 95%;
+}
+
+#title-slide {
+  background: url("platform-bg.png") #34302d 50% 50% no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+
+span.pe {
+    border: 1px solid #fff;
+    width: 100px;
+    height: 75px;
+	padding: 5px;
+    margin: 0px 5px;
+    line-height: 75px;
+}
+
+h2 span.pe {
+  border: 1px solid #000;
+
+  margin: 5px 5px;
+}
+
+span.pe {
+	text-align: center;
+    display: inline-block;
+}
+
+span.pe:after {
+  font-size: 15px;
+  position: absolute;
+  float: right;
+  line-height: 15px;
+}
+
+span.pe:after {
+	content: attr(data-e);
+}
+
+#author {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+	margin-top: 2em;
+	min-height: 150px;
+	background: transparent url('footer.png') no-repeat 95% 95%;
+	
+}
+#title-slide h1, .slide h2 {
+  font-size: 2em;
+}
+
+section.querydsl h2 {
+  background: transparent url('../../../images/querydsl-logo.png') no-repeat 0px 45px;
+  text-indent: -9999px;
+  
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Asciidoctor 0.1.4" name="generator">
+<meta content="@rob_winch" name="author">
+<title>Getting Started with Spring Security 3.2</title>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', prettyPrint)</script>
+<link href="deck.js/core/deck.core.css" rel="stylesheet">
+<link href="deck.js/extensions/goto/deck.goto.css" rel="stylesheet">
+<link href="deck.js/extensions/menu/deck.menu.css" rel="stylesheet">
+<link href="deck.js/extensions/navigation/deck.navigation.css" rel="stylesheet">
+<link href="deck.js/extensions/status/deck.status.css" rel="stylesheet">
+<link href="deck.js/extensions/hash/deck.hash.css" rel="stylesheet">
+<link href="deck.js/themes/style/springone13.css" rel="stylesheet">
+<link href="deck.js/themes/transition/horizontal-slide.css" id="transition-theme-link" rel="stylesheet">
+<script src="deck.js/modernizr.custom.js"></script>
+</head>
+<body class="deck-container article">
+<section class="slide" id="title-slide">
+<h1>Getting Started with Spring Security 3.2</h1>
+<span id="author">@rob_winch</span>
+<br>
+</section>
+<section class="slide" id="_about_me">
+<h2>About me</h2>
+<div class="ulist">
+<ul>
+<li>Open source fanatic</li>
+<li>Spring Security and Spring LDAP Project Lead</li>
+<li>Committer on Spring Framework</li>
+<li>Co-author of Spring Security 3.1 book</li>
+<li><p>
+Twitter @rob_winch<div class="imageblock">
+<div class="content">
+<img alt="spring security31 book" src="images/spring-security31-book.jpg">
+</div>
+</div></p></li>
+</ul>
+</div>
+</section>
+
+<section class="slide" id="_agenda">
+<h2>Agenda</h2>
+<div class="ulist">
+<ul>
+<li>What is Spring Security?</li>
+<li>What&#8217;s new in Spring Security 3.2?</li>
+<li>Demo and live coding</li>
+</ul>
+</div>
+</section>
+
+<section class="slide" id="_what_is_spring_io">
+<h2>What is spring.io?</h2>
+<div class="imageblock">
+<div class="content">
+<img alt="spring io" src="images/spring-io.png">
+</div>
+</div>
+</section>
+
+<section class="slide" id="_what_is_spring_security">
+<h2>What is Spring Security?</h2>
+<div class="ulist">
+<ul>
+<li>Comprehensive support for Authentication and Authorization</li>
+<li>Protection against common attacks</li>
+<li>Servlet API integration</li>
+<li>Optional integration with Spring MVC</li>
+<li>Portability</li>
+</ul>
+</div>
+</section>
+
+<section class="slide" id="_new_in_spring_security_3_2">
+<h2>New in Spring Security 3.2</h2>
+<div class="ulist">
+<ul>
+<li>Servlet 3 and Servlet 3.1 integration</li>
+<li>Concurrency Support</li>
+<li>Spring MVC integration</li>
+<li>CSRF protection</li>
+<li>Security header integration</li>
+<li>Java Configuration support</li>
+</ul>
+</div>
+</section>
+
+<section class="slide" id="_demo">
+<h2>Demo</h2>
+<div class="paragraph"><p>Demo Time!</p></div>
+</section>
+
+<section class="slide" id="_learn_more_stay_connected">
+<h2>Learn More. Stay Connected.</h2>
+<div class="ulist">
+<ul>
+<li>Sample Code <a href="http://github.com/rwinch/gs-spring-security-3.2">http://github.com/rwinch/gs-spring-security-3.2</a></li>
+<li>Spring Security: <a href="http://spring.io/spring-security">http://spring.io/spring-security</a></li>
+<li>Twitter: @SpringSecurity / @rob_winch / @springcentral</li>
+<li>Find Talks on YouTube: <a href="http://spring.io/video">http://spring.io/video</a></li>
+</ul>
+</div>
+</section>
+
+<a class="deck-permalink" href="." title="Permalink to this slide">#</a>
+<script src="deck.js/jquery-1.7.2.min.js"></script>
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/hash/deck.hash.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/scale/deck.scale.js"></script>
+<script src="deck.js/extensions/deck.split.js"></script>
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+<style>
+  .slide.canvas-image {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -moz-box-align: start;
+  -webkit-box-align: start;
+  -ms-box-align: start;
+  box-align: start;
+  -moz-box-pack: start;
+  -webkit-box-pack: start;
+  -ms-box-pack: start;
+  box-pack: start;}
+  
+  .bottom-left {
+    left: 1%;
+    bottom: 20%; }
+  
+  .top-left {
+    left: 1%;
+    top: 20%; }
+  
+  .bottom-right {
+    right: 1%;
+    bottom: 20%; }
+  
+  .top-right {
+    right: 1%;
+    top: 20%; }
+  
+  .center-up {
+    right: 50%;
+    top: 1%;
+  }
+  
+  .center-down {
+    right: 50%;
+    bottom: 1%;
+  }
+  .canvas-image .canvas-caption p {
+    text-align: center;
+    padding-top: 0;
+    padding: 0;
+    -moz-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    -ms-transform: none;
+    transform: none;
+    display: inline;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    font-size: 58px;
+    -webkit-box-shadow: 2px 2px 2px #000;
+    -moz-box-shadow: 2px 2px 2px #000;
+    box-shadow: 2px 2px 2px #000;
+    padding: 1rem;
+    color: white; }
+</style>
+</body>
+</html>
