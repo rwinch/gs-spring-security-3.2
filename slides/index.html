@@ -27,18 +27,19 @@
 </section>
 <section class="slide" id="_about_me">
 <h2>About me</h2>
+<div class="imageblock thumb right">
+<div class="content">
+<img alt="spring security31 book" src="images/spring-security31-book.jpg">
+</div>
+</div>
+
 <div class="ulist">
 <ul>
 <li>Open source fanatic</li>
 <li>Spring Security and Spring LDAP Project Lead</li>
 <li>Committer on Spring Framework</li>
 <li>Co-author of Spring Security 3.1 book</li>
-<li><p>
-Twitter @rob_winch<div class="imageblock">
-<div class="content">
-<img alt="spring security31 book" src="images/spring-security31-book.jpg">
-</div>
-</div></p></li>
+<li>Twitter @rob_winch</li>
 </ul>
 </div>
 </section>
@@ -80,8 +81,8 @@ Twitter @rob_winch<div class="imageblock">
 <h2>New in Spring Security 3.2</h2>
 <div class="ulist">
 <ul>
-<li>Servlet 3 and Servlet 3.1 integration</li>
 <li>Concurrency Support</li>
+<li>Servlet 3 and Servlet 3.1 integration</li>
 <li>Spring MVC integration</li>
 <li>CSRF protection</li>
 <li>Security header integration</li>
@@ -90,9 +91,42 @@ Twitter @rob_winch<div class="imageblock">
 </div>
 </section>
 
-<section class="slide" id="_demo">
-<h2>Demo</h2>
-<div class="paragraph"><p>Demo Time!</p></div>
+<section class="slide canvas-image" id="_demo" style="background-image: url(images/security-demo.png)">
+
+</section>
+
+<section class="slide" id="_csrf_protection">
+<h2>CSRF Protection</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint"><code>POST /sample/110 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/x-www-form-urlencoded
+Cookie: JSESSIONID=8B00C27E0962E363CBAC814F19E51C1D
+
+_method=delete&amp;_csrf=7d281f9f-55d9-4663-88f8-42827f3d2c12</code></pre>
+</div>
+</div>
+</section>
+
+<section class="slide" id="_security_http_response_headers">
+<h2>Security HTTP Response Headers</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint"><code>HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains</code></pre>
+</div>
+</div>
+</section>
+
+<section class="slide canvas-image" id="_demo_2" style="background-image: url(images/security-demo.png)">
+
 </section>
 
 <section class="slide" id="_learn_more_stay_connected">
@@ -117,7 +151,6 @@ Twitter @rob_winch<div class="imageblock">
 <script src="deck.js/extensions/status/deck.status.js"></script>
 <script src="deck.js/extensions/navigation/deck.navigation.js"></script>
 <script src="deck.js/extensions/scale/deck.scale.js"></script>
-<script src="deck.js/extensions/deck.split.js"></script>
 <script>
   $(function() {
     $.deck('.slide');

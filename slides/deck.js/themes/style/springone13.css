@@ -43,7 +43,7 @@
 }
 
 .deck-container section {
-  background: #fff url('footer.png') no-repeat 95% 95%;
+  background: #fff url('footer.png') no-repeat 95% 85%;
 }
 
 #title-slide {
@@ -57,7 +57,7 @@ span.pe {
     border: 1px solid #fff;
     width: 100px;
     height: 75px;
-	padding: 5px;
+    padding: 5px;
     margin: 0px 5px;
     line-height: 75px;
 }
@@ -69,7 +69,7 @@ h2 span.pe {
 }
 
 span.pe {
-	text-align: center;
+    text-align: center;
     display: inline-block;
 }
 
@@ -81,7 +81,7 @@ span.pe:after {
 }
 
 span.pe:after {
-	content: attr(data-e);
+    content: attr(data-e);
 }
 
 #author {
@@ -89,17 +89,18 @@ span.pe:after {
     left: 0;
     right: 0;
     top: 50%;
-	margin-top: 2em;
-	min-height: 150px;
-	background: transparent url('footer.png') no-repeat 95% 95%;
-	
+    margin-top: 2.75em;
+    min-height: 150px;
+    background: transparent url('footer.png') no-repeat 95% 95%;
+
 }
 #title-slide h1, .slide h2 {
   font-size: 2em;
 }
 
-section.querydsl h2 {
-  background: transparent url('../../../images/querydsl-logo.png') no-repeat 0px 45px;
-  text-indent: -9999px;
-  
+.left {
+    float: left;
+}
+.right {
+    float: right;
 }
