@@ -13,22 +13,21 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.springframework.security.samples.mvc;
+package sample.config;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
- * Controller that maps a not found request to the context root.
+ * Our root configuration scans this package for any other {@link Component}'s
+ * to register.
  *
  * @author Rob Winch
  *
  */
-@Controller
-public class DefaultController {
+@Configuration
+@ComponentScan
+public class RootConfiguration {
 
-    @RequestMapping("/**")
-    public String notFound() {
-        return "redirect:/?";
-    }
 }

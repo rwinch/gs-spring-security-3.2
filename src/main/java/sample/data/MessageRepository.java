@@ -13,21 +13,21 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.springframework.security.samples.config;
+package sample.data;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.security.access.prepost.PostAuthorize;
 
 /**
- * Our root configuration scans this package for any other {@link Component}'s
- * to register.
+ * Manages {@link Message} instances
  *
  * @author Rob Winch
  *
  */
-@Configuration
-@ComponentScan
-public class RootConfiguration {
+public interface MessageRepository extends CrudRepository<Message, Long> {
 
+	Iterable<Message> findByToId(Long id);
+
+	@PostAuthorize("hasPermission(returnObject, 'read')")
+	Message findOne(Long id);
 }

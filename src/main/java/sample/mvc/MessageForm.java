@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.security.samples.mvc;
+package sample.mvc;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.security.samples.data.Message;
+import sample.data.Message;
 
 /**
  * Model object used for creating a {@link Message}. This is good practice to

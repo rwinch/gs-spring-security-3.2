@@ -13,21 +13,17 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.springframework.security.samples.data;
+package sample.data;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.security.access.prepost.PostAuthorize;
 
 /**
- * Manages {@link Message} instances
+ * Allows managing {@link User} instances.
  *
  * @author Rob Winch
  *
  */
-public interface MessageRepository extends CrudRepository<Message, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
-	Iterable<Message> findByToId(Long id);
-
-	@PostAuthorize("hasPermission(returnObject, 'read')")
-	Message findOne(Long id);
+    User findByEmail(String email);
 }

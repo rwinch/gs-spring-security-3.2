@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.security.samples.security;
+package sample.security;
 
 import java.util.Collection;
 
@@ -23,8 +23,8 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.samples.data.User;
-import org.springframework.security.samples.data.UserRepository;
+import sample.data.User;
+import sample.data.UserRepository;
 import org.springframework.stereotype.Service;
 
 /**

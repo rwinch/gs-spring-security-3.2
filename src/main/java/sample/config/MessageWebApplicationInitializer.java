@@ -13,12 +13,12 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.springframework.security.samples.config;
+package sample.config;
 
 import javax.servlet.Filter;
 
 import org.springframework.core.annotation.Order;
-import org.springframework.security.samples.mvc.config.WebMvcConfiguration;
+import sample.mvc.config.WebMvcConfiguration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.DispatcherServlet;

@@ -13,17 +13,22 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.springframework.security.samples.data;
+package sample.mvc;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Allows managing {@link User} instances.
+ * Controller that maps a not found request to the context root.
  *
  * @author Rob Winch
  *
  */
-public interface UserRepository extends CrudRepository<User, Long> {
+@Controller
+public class DefaultController {
 
-    User findByEmail(String email);
+    @RequestMapping("/**")
+    public String notFound() {
+        return "redirect:/?";
+    }
 }

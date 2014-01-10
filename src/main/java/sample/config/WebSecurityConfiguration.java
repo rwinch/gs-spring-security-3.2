@@ -1,4 +1,4 @@
-package org.springframework.security.samples.config;
+package sample.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.samples.security.UserRepositoryUserDetailsService;
+import sample.security.UserRepositoryUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

@@ -13,16 +13,16 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.springframework.security.samples.mvc;
+package sample.mvc;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.samples.data.Message;
-import org.springframework.security.samples.data.MessageRepository;
-import org.springframework.security.samples.data.User;
-import org.springframework.security.samples.data.UserRepository;
-import org.springframework.security.samples.security.CurrentUser;
+import sample.data.Message;
+import sample.data.MessageRepository;
+import sample.data.User;
+import sample.data.UserRepository;
+import sample.security.CurrentUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;

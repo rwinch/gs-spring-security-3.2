@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.springframework.security.samples.mvc.config;
+package sample.mvc.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -34,7 +34,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  *
  */
 @EnableWebMvc
-@ComponentScan("org.springframework.security.samples.mvc")
+@ComponentScan("sample.mvc")
 public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Autowired

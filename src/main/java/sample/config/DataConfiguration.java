@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.springframework.security.samples.config;
+package sample.config;
 
 import javax.sql.DataSource;
 
@@ -29,8 +29,9 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.security.samples.data.Message;
+import sample.data.Message;
 import org.springframework.transaction.PlatformTransactionManager;
+import sample.data.MessageRepository;
 
 /**
  * Initializes spring Configuration for Spring Data and our {@link DataSource}.
@@ -39,7 +40,7 @@ import org.springframework.transaction.PlatformTransactionManager;
  *
  */
 @Configuration
-@EnableJpaRepositories("org.springframework.security.samples.data")
+@EnableJpaRepositories(basePackageClasses = MessageRepository.class)
 public class DataConfiguration {
 
     @Bean

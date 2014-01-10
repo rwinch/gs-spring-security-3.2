@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.springframework.security.samples.data;
+package sample.data;
 
 import java.util.Calendar;
 
