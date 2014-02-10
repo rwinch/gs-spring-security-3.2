@@ -1,7 +1,7 @@
 About
 =================
 
-Source Code and materials for Getting Started with Spring Security 3.2. To run the samples import the project into Spring Tool Suite using the Gradle Eclipse plugin. You can view the slides at http://rwinch.github.io/gs-spring-security-3.2/
+Source Code and materials for Getting Started with Spring Security 3.2. To run the samples import the project into Spring Tool Suite using the Gradle Eclipse plugin. You can view the slides at http://rwinch.github.io/gs-spring-security-3.2/ and the webinar replay at https://spring.io/blog/2014/01/21/webinar-replay-spring-security-3-2
 
 Running with Gradle
 ======================
