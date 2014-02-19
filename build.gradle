@@ -62,3 +62,8 @@ dependencies {
             "org.springframework:spring-test:$springVersion",
             'org.easytesting:fest-assert:1.4'
 }
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.10'
+}
