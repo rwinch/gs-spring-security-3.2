@@ -67,10 +67,8 @@ public class SignupController {
 
         List<GrantedAuthority> authorities =
             AuthorityUtils.createAuthorityList("ROLE_USER");
-        UserDetails userDetails = new org.springframework.security.core.userdetails
-            .User(user.getEmail(),user.getPassword(), authorities);
         Authentication auth =
-            new UsernamePasswordAuthenticationToken(userDetails, user.getPassword(), authorities);
+            new UsernamePasswordAuthenticationToken(user, user.getPassword(), authorities);
         SecurityContextHolder.getContext().setAuthentication(auth);
         return "redirect:/";
     }

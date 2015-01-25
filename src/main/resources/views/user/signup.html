@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+  <head>
+    <title tiles:fragment="title">Messages : Sign Up</title>
+  </head>
+  <body>
+    <div tiles:fragment="content">
+        <form name="f" th:action="@{/signup}" th:object="${user}" method="post">
+	        <fieldset>
+	            <legend>Please Login</legend>
+                <label for="firstName">First Name</label>
+                <input type="text" th:field="*{firstName}"/>
+                <label for="lastName">Last Name</label>
+                <input type="text" th:field="*{lastName}"/>
+                <label for="email">Email</label>
+                <input type="text" th:field="*{email}"/>
+	            <label for="password">Password</label>
+	            <input type="password" th:field="*{password}"/>
+	            <div class="form-actions">
+	                <button type="submit" class="btn">Sign Up</button>
+	            </div>
+	        </fieldset>
+	    </form>
+    </div>
+  </body>
+</html>
